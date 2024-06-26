@@ -1,38 +1,27 @@
-import products from '@/assets/data/products';
-import { Colors } from '@/src/constants/Colors';
-import {  StyleSheet, Platform, View,Text } from 'react-native';
-import { Image } from 'expo-image';
+import {StyleSheet, Platform, View, FlatList} from 'react-native';
+import ProductListItem from '@components/ProductListItem';
+import products from "@assets/data/products";
 
-                            
-export default function HomeScreen() {
-  const product = products[0]
+
+export default function HomeScreen () {
   return (
     <View style={styles.container}>
-       <Image
-        style={styles.image}
-        source={product.image}
-        transition={1000}
+      <FlatList
+        data={products}
+        renderItem={({item}) => <ProductListItem product={item}/>}
+        numColumns={2}
+        contentContainerStyle={{gap: 10}}
+        columnWrapperStyle={{gap: 10}}
       />
-      <Text style={styles.title}>Pizza paperoni</Text>
-      <Text style={styles.price}>$12.99</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
- container: {
-  paddingTop: Platform.OS === 'android' ? 20 : 0
- },
- title: {
-  fontSize: 20,
-  fontWeight: 'bold'
- },
- price: {
-  fontSize: 15,
-  color: Colors.light.tint
- },
- image: {
-  width: '100%',
-  aspectRatio: 1,
- }
+  container: {
+    paddingTop: Platform.OS === 'android' ? 20 : 0,
+    paddingHorizontal: 10,
+    borderRadius: 20,
+    backgroundColor: '#eeeced'
+  },
 });
