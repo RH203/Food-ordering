@@ -1,9 +1,9 @@
-import { Tabs } from 'expo-router';
+import {Tabs} from 'expo-router';
 import React from 'react';
 
-import { TabBarIcon } from '@components/navigation/TabBarIcon';
-import { Colors } from '@constants/Colors';
-import { useColorScheme } from '@hooks/useColorScheme';
+import {TabBarIcon} from '@components/navigation/TabBarIcon';
+import {Colors} from '@constants/Colors';
+import {useColorScheme} from '@hooks/useColorScheme';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -17,8 +17,8 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Menu',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'fast-food' : 'fast-food-outline'} color={color} />
+          tabBarIcon: ({color, focused}) => (
+            <TabBarIcon name={focused ? 'fast-food' : 'fast-food-outline'} color={color}/>
           ),
         }}
       />
@@ -26,8 +26,8 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          tabBarIcon: ({color, focused}) => (
+            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color}/>
           ),
         }}
       />

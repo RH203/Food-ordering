@@ -1,9 +1,9 @@
-import {StyleSheet, Platform, View, FlatList} from 'react-native';
+import {StyleSheet, Platform, View, FlatList, Text} from 'react-native';
 import ProductListItem from '@components/ProductListItem';
 import products from "@assets/data/products";
 
 
-export default function HomeScreen () {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <FlatList
@@ -12,7 +12,10 @@ export default function HomeScreen () {
         numColumns={2}
         contentContainerStyle={{gap: 10}}
         columnWrapperStyle={{gap: 10}}
+
       />
+
+
     </View>
   );
 }
@@ -20,8 +23,9 @@ export default function HomeScreen () {
 const styles = StyleSheet.create({
   container: {
     paddingTop: Platform.OS === 'android' ? 20 : 0,
-    paddingHorizontal: 10,
-    borderRadius: 20,
-    backgroundColor: '#eeeced'
+    padding: 10,
+    backgroundColor: '#eeeced',
+
   },
+
 });
