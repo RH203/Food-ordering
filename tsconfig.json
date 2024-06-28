@@ -17,6 +17,12 @@
       ],
       "@hooks/*": [
         "src/hooks/*"
+      ],
+      "@store/*": [
+        "src/redux/store/*"
+      ],
+      "@slice/*": [
+        "src/redux/slice/*"
       ]
     }
   },
